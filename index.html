@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AlertaGlobal — Sistema de Monitoramento de Catástrofes</title>
+  <meta name="description" content="Sistema de monitoramento e alerta precoce para catástrofes naturais e ambientais em tempo real." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <div class="nav-logo">
+        <div class="logo-icon">⚠</div>
+        <span>Alerta<em>Global</em></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Início</a></li>
+        <li><a href="monitoramento.html">Monitoramento</a></li>
+        <li><a href="alertas.html">Alertas</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="integrantes.html">Equipe</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <nav class="nav-mobile" id="nav-mobile">
+      <a href="index.html">Início</a>
+      <a href="monitoramento.html">Monitoramento</a>
+      <a href="alertas.html">Alertas</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="faq.html">FAQ</a>
+      <a href="integrantes.html">Equipe</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">SISTEMA ATIVO — AO VIVO</div>
+          <h1>Monitoramento de<br /><span>Catástrofes</span><br />em Tempo Real</h1>
+          <p>Plataforma integrada de vigilância, análise e alerta precoce para eventos naturais e ambientais de alto risco ao redor do mundo.</p>
+          <div class="hero-actions">
+            <a href="monitoramento.html" class="btn btn-primary">▶ Ver Monitoramento</a>
+            <a href="alertas.html" class="btn btn-outline">⚠ Alertas Ativos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section style="padding: 0 0 2rem;">
+      <div class="container">
+        <div class="stats-strip">
+          <div class="stat-item">
+            <div class="stat-number text-red" data-count="47" data-suffix="">47</div>
+            <div class="stat-label">Alertas Ativos</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number text-blue" data-count="1284" data-suffix="">1.284</div>
+            <div class="stat-label">Sensores Online</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number text-green" data-count="98" data-suffix="%">98%</div>
+            <div class="stat-label">Uptime do Sistema</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number text-orange" data-count="230" data-suffix="">230</div>
+            <div class="stat-label">Países Monitorados</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FUNCIONALIDADES -->
+    <section>
+      <div class="container">
+        <span class="section-tag">// O que fazemos</span>
+        <h2 class="section-title">Vigilância <span class="text-red">Inteligente</span></h2>
+        <p class="section-desc">Nossa plataforma integra dados de satélites, sensores terrestres e estações meteorológicas para oferecer o monitoramento mais completo do Brasil.</p>
+
+        <div class="grid-3">
+          <div class="card alert-critical">
+            <div class="card-icon">🌊</div>
+            <h3>Tsunamis & Maremotos</h3>
+            <p>Detecção de variações sísmicas submarinas com alertas em menos de 3 minutos para regiões costeiras.</p>
+            <div class="mt-2">
+              <span class="badge badge-red">Crítico</span>
+            </div>
+          </div>
+          <div class="card alert-high">
+            <div class="card-icon">🌋</div>
+            <h3>Atividade Vulcânica</h3>
+            <p>Monitoramento contínuo de tremores, emissão de gases e deformações do solo em vulcões ativos.</p>
+            <div class="mt-2">
+              <span class="badge badge-orange">Alto Risco</span>
+            </div>
+          </div>
+          <div class="card alert-medium">
+            <div class="card-icon">🌪</div>
+            <h3>Furacões & Tornados</h3>
+            <p>Rastreamento de sistemas tropicais com previsão de trajetória e intensidade para 5 dias.</p>
+            <div class="mt-2">
+              <span class="badge badge-yellow">Atenção</span>
+            </div>
+          </div>
+          <div class="card alert-medium">
+            <div class="card-icon">🔥</div>
+            <h3>Incêndios Florestais</h3>
+            <p>Detecção por satélite de focos de calor em tempo real com mapas de propagação e risco.</p>
+            <div class="mt-2">
+              <span class="badge badge-orange">Alto Risco</span>
+            </div>
+          </div>
+          <div class="card alert-low">
+            <div class="card-icon">🌊</div>
+            <h3>Enchentes & Deslizamentos</h3>
+            <p>Análise de níveis de rios, saturação do solo e histórico pluviométrico para emissão de alertas.</p>
+            <div class="mt-2">
+              <span class="badge badge-yellow">Atenção</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-icon">🌍</div>
+            <h3>Terremotos</h3>
+            <p>Rede sísmica global com localização de epicentros e cálculo de magnitude em tempo real.</p>
+            <div class="mt-2">
+              <span class="badge badge-blue">Monitorado</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ÚLTIMOS ALERTAS -->
+    <section style="background: var(--bg-secondary); padding: 5rem 0;">
+      <div class="container">
+        <div class="flex justify-between align-center mb-3" style="flex-wrap:wrap; gap:1rem;">
+          <div>
+            <span class="section-tag">// Feed ao vivo</span>
+            <h2 class="section-title">Últimos <span class="text-red">Alertas</span></h2>
+          </div>
+          <a href="alertas.html" class="btn btn-outline" style="align-self:flex-end;">Ver Todos →</a>
+        </div>
+
+        <div class="alert-feed">
+          <div class="alert-entry alert-critical">
+            <div class="alert-time">03/06 — 19:42</div>
+            <div class="alert-text">
+              <strong>⚠ Alerta Crítico — Terremoto M6.8</strong>
+              <span>Epicentro a 40km de Lima, Peru. Profundidade de 12km. Possibilidade de réplicas.</span>
+            </div>
+            <span class="badge badge-red" style="flex-shrink:0;">Crítico</span>
+          </div>
+          <div class="alert-entry alert-high">
+            <div class="alert-time">03/06 — 18:15</div>
+            <div class="alert-text">
+              <strong>🔥 Incêndio Florestal — Pantanal, MT</strong>
+              <span>3.200 hectares afetados. Vento a 45 km/h favorecendo propagação para nordeste.</span>
+            </div>
+            <span class="badge badge-orange" style="flex-shrink:0;">Alto</span>
+          </div>
+          <div class="alert-entry alert-medium">
+            <div class="alert-time">03/06 — 16:30</div>
+            <div class="alert-text">
+              <strong>🌊 Nível do Rio em Elevação — Amazonas</strong>
+              <span>Rio Solimões atingiu cota de alerta. 8 municípios em estado de atenção.</span>
+            </div>
+            <span class="badge badge-yellow" style="flex-shrink:0;">Atenção</span>
+          </div>
+          <div class="alert-entry alert-low">
+            <div class="alert-time">03/06 — 14:00</div>
+            <div class="alert-text">
+              <strong>🌪 Tempestade Severa — Sul do Brasil</strong>
+              <span>Previsão de granizo e vendavais para RS e SC entre 20h e 02h.</span>
+            </div>
+            <span class="badge badge-green" style="flex-shrink:0;">Moderado</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section>
+      <div class="container text-center">
+        <span class="section-tag" style="justify-content:center; display:block;">// Faça parte</span>
+        <h2 class="section-title">Juntos contra as <span class="text-red">Catástrofes</span></h2>
+        <p style="max-width:500px; margin: 0 auto 2rem;">Receba alertas personalizados para sua região e ajude a salvar vidas com informação em tempo real.</p>
+        <div class="hero-actions" style="justify-content:center;">
+          <button class="btn btn-primary" data-modal="modal-alert">🔔 Ativar Alertas</button>
+          <a href="sobre.html" class="btn btn-outline">Saiba mais</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal-alert">
+    <div class="modal">
+      <button class="modal-close">✕</button>
+      <h3>🔔 Ativar Alertas</h3>
+      <p>Insira seu e-mail para receber notificações de catástrofes na sua região em tempo real.</p>
+      <div class="form-group">
+        <label for="modal-email">E-mail</label>
+        <input type="email" id="modal-email" placeholder="seu@email.com" />
+      </div>
+      <div class="form-group">
+        <label for="modal-regiao">Região de interesse</label>
+        <select id="modal-regiao">
+          <option value="">Selecione...</option>
+          <option>Brasil — Sul</option>
+          <option>Brasil — Sudeste</option>
+          <option>Brasil — Norte / Amazônia</option>
+          <option>Brasil — Nordeste</option>
+          <option>Global</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" onclick="showToast('Alerta ativado com sucesso!','success'); closeModal('modal-alert')">Ativar Agora</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <div class="logo-icon">⚠</div>
+            <span>Alerta<em>Global</em></span>
+          </div>
+          <p>Sistema de monitoramento e alerta precoce para catástrofes naturais e ambientais.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="monitoramento.html">Monitoramento</a></li>
+            <li><a href="alertas.html">Alertas</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Equipe</h4>
+          <ul>
+            <li><a href="integrantes.html">Integrantes</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="https://github.com" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 AlertaGlobal — Projeto Front-End Engineering · Feito com HTML, CSS e JavaScript</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast-container"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>
