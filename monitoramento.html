@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monitoramento — AlertaGlobal</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav-logo">
+        <div class="logo-icon">⚠</div>
+        <span>Alerta<em>Global</em></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="monitoramento.html" class="active">Monitoramento</a></li>
+        <li><a href="alertas.html">Alertas</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="integrantes.html">Equipe</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <nav class="nav-mobile" id="nav-mobile">
+      <a href="index.html">Início</a>
+      <a href="monitoramento.html">Monitoramento</a>
+      <a href="alertas.html">Alertas</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="faq.html">FAQ</a>
+      <a href="integrantes.html">Equipe</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HEADER DA PÁGINA -->
+    <section style="padding: 3rem 0 2rem;">
+      <div class="container">
+        <div class="flex justify-between align-center" style="flex-wrap:wrap; gap:1rem;">
+          <div>
+            <span class="section-tag">// Painel de controle</span>
+            <h1 class="section-title">Monitoramento <span class="text-blue">Global</span></h1>
+          </div>
+          <div class="flex align-center gap-2">
+            <span style="font-family:var(--font-mono); font-size:0.85rem; color:var(--text-muted);">Horário UTC:</span>
+            <span id="live-clock" style="font-family:var(--font-mono); color:var(--accent-cyan); font-size:1.1rem;"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAPA INTERATIVO -->
+    <section style="padding: 0 0 3rem;">
+      <div class="container">
+        <div class="map-placeholder">
+          <div style="text-align:center; position:relative; z-index:1;">
+            <div style="font-size:3rem; margin-bottom:0.75rem;">🗺</div>
+            <p style="font-size:1rem; color:var(--text-secondary);">Mapa Global de Eventos</p>
+            <p style="font-size:0.8rem; margin-top:0.5rem;">1.284 sensores ativos · 47 eventos em monitoramento</p>
+            <!-- Pontos de "eventos" simulados -->
+            <div style="position:absolute; top:30%; left:35%; width:12px; height:12px; border-radius:50%; background:var(--accent-red); box-shadow:0 0 0 6px rgba(255,45,45,0.2); animation: pulse-red 1.5s infinite;"></div>
+            <div style="position:absolute; top:55%; left:20%; width:10px; height:10px; border-radius:50%; background:var(--accent-orange); box-shadow:0 0 0 5px rgba(255,107,0,0.2); animation: pulse-red 2s infinite;"></div>
+            <div style="position:absolute; top:40%; left:70%; width:10px; height:10px; border-radius:50%; background:var(--accent-yellow); box-shadow:0 0 0 5px rgba(255,209,0,0.2);"></div>
+            <div style="position:absolute; top:25%; left:55%; width:8px; height:8px; border-radius:50%; background:var(--accent-green); box-shadow:0 0 0 4px rgba(0,230,118,0.2);"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAINEL DE EVENTOS POR TIPO - TABS -->
+    <section style="padding: 1rem 0 4rem;">
+      <div class="container" data-tabs>
+        <span class="section-tag">// Eventos por categoria</span>
+        <h2 class="section-title mb-2">Painel de <span class="text-cyan">Eventos</span></h2>
+
+        <div class="tabs-header">
+          <button class="tab-btn active" data-tab="sismica">🌍 Sísmica</button>
+          <button class="tab-btn" data-tab="climatica">🌪 Climática</button>
+          <button class="tab-btn" data-tab="hidro">🌊 Hidrológica</button>
+          <button class="tab-btn" data-tab="fogo">🔥 Fogo</button>
+        </div>
+
+        <div class="tab-panel active" data-panel="sismica">
+          <div class="alert-feed">
+            <div class="alert-entry alert-critical">
+              <div class="alert-time">19:42 UTC</div>
+              <div class="alert-text">
+                <strong>Terremoto M6.8 — Lima, Peru</strong>
+                <span>Profundidade: 12km · Intensidade: VII · Alerta de tsunami descartado</span>
+              </div>
+              <span class="badge badge-red">M6.8</span>
+            </div>
+            <div class="alert-entry alert-medium">
+              <div class="alert-time">17:08 UTC</div>
+              <div class="alert-text">
+                <strong>Tremor M4.2 — Região do Etna, Itália</strong>
+                <span>Profundidade: 8km · Associado à atividade vulcânica recente</span>
+              </div>
+              <span class="badge badge-yellow">M4.2</span>
+            </div>
+            <div class="alert-entry">
+              <div class="alert-time">14:22 UTC</div>
+              <div class="alert-text">
+                <strong>Tremor M3.1 — Oklahoma, EUA</strong>
+                <span>Profundidade: 5km · Provavelmente induzido por atividade de extração</span>
+              </div>
+              <span class="badge badge-green">M3.1</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-panel="climatica">
+          <div class="alert-feed">
+            <div class="alert-entry alert-high">
+              <div class="alert-time">18:00 UTC</div>
+              <div class="alert-text">
+                <strong>Furacão Categoria 3 — Golfo do México</strong>
+                <span>Ventos de 195 km/h · Trajetória: costa do Texas · Landfall previsto em 72h</span>
+              </div>
+              <span class="badge badge-orange">CAT 3</span>
+            </div>
+            <div class="alert-entry alert-medium">
+              <div class="alert-time">15:30 UTC</div>
+              <div class="alert-text">
+                <strong>Tempestade Severa — Sul do Brasil</strong>
+                <span>Previsão de granizo e vendavais para RS e SC entre 20h e 02h UTC</span>
+              </div>
+              <span class="badge badge-yellow">SEVERA</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-panel="hidro">
+          <div class="alert-feed">
+            <div class="alert-entry alert-medium">
+              <div class="alert-time">16:30 UTC</div>
+              <div class="alert-text">
+                <strong>Cota de Alerta — Rio Solimões, AM</strong>
+                <span>Nível: 28,4m (cota de alerta: 27m) · 8 municípios em atenção</span>
+              </div>
+              <span class="badge badge-yellow">ALERTA</span>
+            </div>
+            <div class="alert-entry">
+              <div class="alert-time">12:15 UTC</div>
+              <div class="alert-text">
+                <strong>Monitoramento — Rio Paraná, SP/MS</strong>
+                <span>Nível estável · Sem risco de transbordamento nas próximas 72h</span>
+              </div>
+              <span class="badge badge-green">NORMAL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-panel="fogo">
+          <div class="alert-feed">
+            <div class="alert-entry alert-high">
+              <div class="alert-time">18:15 UTC</div>
+              <div class="alert-text">
+                <strong>Incêndio Florestal — Pantanal, MT</strong>
+                <span>3.200 ha afetados · Vento 45 km/h · 12 focos ativos detectados por satélite</span>
+              </div>
+              <span class="badge badge-orange">ALTO</span>
+            </div>
+            <div class="alert-entry alert-medium">
+              <div class="alert-time">11:00 UTC</div>
+              <div class="alert-text">
+                <strong>Foco de Calor — Pará, PA</strong>
+                <span>340 focos detectados · Concentrados em área de desmatamento recente</span>
+              </div>
+              <span class="badge badge-yellow">ATENÇÃO</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDER DE ESTATÍSTICAS -->
+    <section style="background: var(--bg-secondary); padding: 4rem 0;">
+      <div class="container">
+        <span class="section-tag">// Dados do sistema</span>
+        <h2 class="section-title mb-3">Status da <span class="text-green">Infraestrutura</span></h2>
+
+        <div class="slider-container">
+          <div class="slider-track">
+            <div class="slide">
+              <h3 class="text-cyan">📡 Rede de Sensores</h3>
+              <br/>
+              <div class="stats-strip" style="margin:0;">
+                <div class="stat-item"><div class="stat-number text-green">1.284</div><div class="stat-label">Sensores Online</div></div>
+                <div class="stat-item"><div class="stat-number text-red">12</div><div class="stat-label">Offline</div></div>
+                <div class="stat-item"><div class="stat-number text-blue">98%</div><div class="stat-label">Disponibilidade</div></div>
+                <div class="stat-item"><div class="stat-number text-yellow">3min</div><div class="stat-label">Latência Média</div></div>
+              </div>
+            </div>
+            <div class="slide">
+              <h3 class="text-cyan">🌍 Cobertura Global</h3>
+              <br/>
+              <div class="grid-4" style="text-align:center;">
+                <div><div style="font-family:var(--font-display); font-size:2.5rem; color:var(--accent-blue);">230</div><p>Países</p></div>
+                <div><div style="font-family:var(--font-display); font-size:2.5rem; color:var(--accent-cyan);">7</div><p>Continentes</p></div>
+                <div><div style="font-family:var(--font-display); font-size:2.5rem; color:var(--accent-green);">24/7</div><p>Operação</p></div>
+                <div><div style="font-family:var(--font-display); font-size:2.5rem; color:var(--accent-orange);">47</div><p>Alertas Ativos</p></div>
+              </div>
+            </div>
+            <div class="slide">
+              <h3 class="text-cyan">📊 Eventos em 2026</h3>
+              <br/>
+              <div class="grid-4" style="text-align:center;">
+                <div><div style="font-family:var(--font-display); font-size:2.5rem; color:var(--accent-red);">1.842</div><p>Terremotos</p></div>
+                <div><div style="font-family:var(--font-display); font-size:2.5rem; color:var(--accent-orange);">34</div><p>Furacões</p></div>
+                <div><div style="font-family:var(--font-display); font-size:2.5rem; color:var(--accent-yellow);">289</div><p>Enchentes</p></div>
+                <div><div style="font-family:var(--font-display); font-size:2.5rem; color:var(--accent-green);">67</div><p>Outros</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="slider-controls">
+            <button class="slider-btn slider-prev">←</button>
+            <button class="slider-btn slider-next">→</button>
+          </div>
+          <div class="slider-dots">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <div class="logo-icon">⚠</div>
+            <span>Alerta<em>Global</em></span>
+          </div>
+          <p>Sistema de monitoramento e alerta precoce para catástrofes naturais e ambientais.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="monitoramento.html">Monitoramento</a></li>
+            <li><a href="alertas.html">Alertas</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Equipe</h4>
+          <ul>
+            <li><a href="integrantes.html">Integrantes</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="https://github.com" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 AlertaGlobal — Projeto Front-End Engineering · Feito com HTML, CSS e JavaScript</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast-container"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>
