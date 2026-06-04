@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alertas — AlertaGlobal</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav-logo">
+        <div class="logo-icon">⚠</div>
+        <span>Alerta<em>Global</em></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="monitoramento.html">Monitoramento</a></li>
+        <li><a href="alertas.html" class="active">Alertas</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="integrantes.html">Equipe</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <nav class="nav-mobile" id="nav-mobile">
+      <a href="index.html">Início</a>
+      <a href="monitoramento.html">Monitoramento</a>
+      <a href="alertas.html">Alertas</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="faq.html">FAQ</a>
+      <a href="integrantes.html">Equipe</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <div class="container">
+        <span class="section-tag">// Central de alertas</span>
+        <h1 class="section-title">Alertas <span class="text-red">Ativos</span></h1>
+        <p class="section-desc">Todos os eventos em monitoramento classificados por nível de risco. Atualizado continuamente.</p>
+
+        <!-- NÍVEL DE ALERTA - O QUE SIGNIFICA -->
+        <div class="grid-4 mb-3">
+          <div class="card alert-critical text-center" style="padding:1.25rem;">
+            <span class="badge badge-red" style="font-size:0.85rem; padding: 0.3rem 0.75rem;">CRÍTICO</span>
+            <p class="mt-1" style="font-size:0.88rem;">Risco iminente de vida. Evacuação obrigatória.</p>
+          </div>
+          <div class="card alert-high text-center" style="padding:1.25rem;">
+            <span class="badge badge-orange" style="font-size:0.85rem; padding: 0.3rem 0.75rem;">ALTO</span>
+            <p class="mt-1" style="font-size:0.88rem;">Risco elevado. Atenção máxima.</p>
+          </div>
+          <div class="card alert-medium text-center" style="padding:1.25rem;">
+            <span class="badge badge-yellow" style="font-size:0.85rem; padding: 0.3rem 0.75rem;">MODERADO</span>
+            <p class="mt-1" style="font-size:0.88rem;">Situação de atenção. Acompanhe.</p>
+          </div>
+          <div class="card alert-low text-center" style="padding:1.25rem;">
+            <span class="badge badge-green" style="font-size:0.85rem; padding: 0.3rem 0.75rem;">BAIXO</span>
+            <p class="mt-1" style="font-size:0.88rem;">Evento monitorado sem risco imediato.</p>
+          </div>
+        </div>
+
+        <!-- FILTRO INTERATIVO -->
+        <div class="flex gap-1 mb-3" style="flex-wrap:wrap;">
+          <button class="btn btn-outline" id="filter-all" onclick="filterAlerts('all')" style="padding:0.5rem 1rem; font-size:0.85rem;">Todos</button>
+          <button class="btn" onclick="filterAlerts('critico')" style="background:rgba(255,45,45,0.1); color:var(--accent-red); border:1px solid rgba(255,45,45,0.3); padding:0.5rem 1rem; font-size:0.85rem;">Crítico</button>
+          <button class="btn" onclick="filterAlerts('alto')" style="background:rgba(255,107,0,0.1); color:var(--accent-orange); border:1px solid rgba(255,107,0,0.3); padding:0.5rem 1rem; font-size:0.85rem;">Alto</button>
+          <button class="btn" onclick="filterAlerts('moderado')" style="background:rgba(255,209,0,0.1); color:var(--accent-yellow); border:1px solid rgba(255,209,0,0.3); padding:0.5rem 1rem; font-size:0.85rem;">Moderado</button>
+          <button class="btn" onclick="filterAlerts('baixo')" style="background:rgba(0,230,118,0.1); color:var(--accent-green); border:1px solid rgba(0,230,118,0.3); padding:0.5rem 1rem; font-size:0.85rem;">Baixo</button>
+        </div>
+
+        <!-- LISTA DE ALERTAS -->
+        <div class="alert-feed" id="alerts-list">
+
+          <div class="alert-entry alert-critical" data-level="critico">
+            <div class="alert-time">03/06 19:42</div>
+            <div class="alert-text">
+              <strong>⚠ Terremoto M6.8 — Lima, Peru</strong>
+              <span>Epicentro a 40km. Prof: 12km. Tsunami descartado. Réplicas esperadas.</span>
+            </div>
+            <div>
+              <span class="badge badge-red">CRÍTICO</span>
+              <button class="btn btn-outline mt-1" data-modal="modal-terremoto" style="font-size:0.75rem; padding:0.3rem 0.7rem;">+ Detalhes</button>
+            </div>
+          </div>
+
+          <div class="alert-entry alert-high" data-level="alto">
+            <div class="alert-time">03/06 18:15</div>
+            <div class="alert-text">
+              <strong>🔥 Incêndio Florestal — Pantanal, MT</strong>
+              <span>3.200 ha · 12 focos · Vento 45km/h. Ameaça de expansão para nordeste.</span>
+            </div>
+            <div>
+              <span class="badge badge-orange">ALTO</span>
+              <button class="btn btn-outline mt-1" data-modal="modal-incendio" style="font-size:0.75rem; padding:0.3rem 0.7rem;">+ Detalhes</button>
+            </div>
+          </div>
+
+          <div class="alert-entry alert-high" data-level="alto">
+            <div class="alert-time">03/06 18:00</div>
+            <div class="alert-text">
+              <strong>🌀 Furacão CAT 3 — Golfo do México</strong>
+              <span>Ventos de 195 km/h. Landfall previsto no Texas em 72h.</span>
+            </div>
+            <span class="badge badge-orange">ALTO</span>
+          </div>
+
+          <div class="alert-entry alert-medium" data-level="moderado">
+            <div class="alert-time">03/06 16:30</div>
+            <div class="alert-text">
+              <strong>🌊 Nível Elevado — Rio Solimões, AM</strong>
+              <span>28,4m (cota alerta: 27m). 8 municípios em atenção. Cheia esperada em 48h.</span>
+            </div>
+            <span class="badge badge-yellow">MODERADO</span>
+          </div>
+
+          <div class="alert-entry alert-medium" data-level="moderado">
+            <div class="alert-time">03/06 17:08</div>
+            <div class="alert-text">
+              <strong>🌋 Tremor M4.2 — Etna, Itália</strong>
+              <span>Atividade sísmica associada ao vulcão Etna. Monitoramento intensificado.</span>
+            </div>
+            <span class="badge badge-yellow">MODERADO</span>
+          </div>
+
+          <div class="alert-entry alert-medium" data-level="moderado">
+            <div class="alert-time">03/06 15:30</div>
+            <div class="alert-text">
+              <strong>⛈ Tempestade Severa — RS e SC</strong>
+              <span>Granizo e vendavais previstos entre 20h e 02h UTC. Raios frequentes.</span>
+            </div>
+            <span class="badge badge-yellow">MODERADO</span>
+          </div>
+
+          <div class="alert-entry alert-low" data-level="baixo">
+            <div class="alert-time">03/06 14:00</div>
+            <div class="alert-text">
+              <strong>🏔 Deslizamento de Terra — Serrana, RJ</strong>
+              <span>Solo saturado em encostas. Risco moderado. Populações orientadas a evacuarem preventivamente.</span>
+            </div>
+            <span class="badge badge-green">BAIXO</span>
+          </div>
+
+          <div class="alert-entry alert-low" data-level="baixo">
+            <div class="alert-time">03/06 12:15</div>
+            <div class="alert-text">
+              <strong>🔥 Focos de Calor — Pará, PA</strong>
+              <span>340 focos detectados. Área de desmatamento recente. Sem ameaça urbana.</span>
+            </div>
+            <span class="badge badge-green">BAIXO</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL TERREMOTO -->
+  <div class="modal-overlay" id="modal-terremoto">
+    <div class="modal">
+      <button class="modal-close">✕</button>
+      <h3>🌍 Terremoto M6.8 — Lima, Peru</h3>
+      <div style="margin: 1rem 0; display:flex; flex-direction:column; gap:0.5rem; font-family:var(--font-mono); font-size:0.85rem;">
+        <div class="flex justify-between"><span style="color:var(--text-muted)">Magnitude:</span><span class="text-red">M6.8</span></div>
+        <div class="flex justify-between"><span style="color:var(--text-muted)">Profundidade:</span><span>12 km</span></div>
+        <div class="flex justify-between"><span style="color:var(--text-muted)">Epicentro:</span><span>40km de Lima</span></div>
+        <div class="flex justify-between"><span style="color:var(--text-muted)">Hora (UTC):</span><span>19:42</span></div>
+        <div class="flex justify-between"><span style="color:var(--text-muted)">Tsunami:</span><span class="text-green">Descartado</span></div>
+        <div class="flex justify-between"><span style="color:var(--text-muted)">Fonte:</span><span>USGS</span></div>
+      </div>
+      <p>Réplicas são esperadas nas próximas horas. Autoridades locais ativaram protocolo de emergência. Populações em áreas de risco devem seguir orientações da Defesa Civil.</p>
+      <button class="btn btn-outline mt-2" onclick="closeModal('modal-terremoto')">Fechar</button>
+    </div>
+  </div>
+
+  <!-- MODAL INCÊNDIO -->
+  <div class="modal-overlay" id="modal-incendio">
+    <div class="modal">
+      <button class="modal-close">✕</button>
+      <h3>🔥 Incêndio Florestal — Pantanal, MT</h3>
+      <div style="margin: 1rem 0; display:flex; flex-direction:column; gap:0.5rem; font-family:var(--font-mono); font-size:0.85rem;">
+        <div class="flex justify-between"><span style="color:var(--text-muted)">Área atingida:</span><span class="text-orange">3.200 ha</span></div>
+        <div class="flex justify-between"><span style="color:var(--text-muted)">Focos ativos:</span><span>12</span></div>
+        <div class="flex justify-between"><span style="color:var(--text-muted)">Vento:</span><span>45 km/h (NE)</span></div>
+        <div class="flex justify-between"><span style="color:var(--text-muted)">Umidade:</span><span>18%</span></div>
+        <div class="flex justify-between"><span style="color:var(--text-muted)">Fonte:</span><span>INPE / Sentinel-3</span></div>
+      </div>
+      <p>Condições críticas de propagação. Brigadistas do IBAMA atuando na área. Proibição de acesso civil ao raio de 15km dos focos principais.</p>
+      <button class="btn btn-outline mt-2" onclick="closeModal('modal-incendio')">Fechar</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <div class="logo-icon">⚠</div>
+            <span>Alerta<em>Global</em></span>
+          </div>
+          <p>Sistema de monitoramento e alerta precoce para catástrofes naturais e ambientais.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="monitoramento.html">Monitoramento</a></li>
+            <li><a href="alertas.html">Alertas</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Equipe</h4>
+          <ul>
+            <li><a href="integrantes.html">Integrantes</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="https://github.com" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 AlertaGlobal — Projeto Front-End Engineering · Feito com HTML, CSS e JavaScript</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast-container"></div>
+  <script src="js/main.js"></script>
+  <script>
+    // Filtro de alertas
+    function filterAlerts(level) {
+      const entries = document.querySelectorAll('#alerts-list .alert-entry');
+      entries.forEach(entry => {
+        if (level === 'all' || entry.dataset.level === level) {
+          entry.style.display = 'flex';
+        } else {
+          entry.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
